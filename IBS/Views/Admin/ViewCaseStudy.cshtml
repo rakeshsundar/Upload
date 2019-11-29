@@ -1,0 +1,82 @@
+﻿@model IEnumerable<MvcMySql.Models.View_case_details>
+@{
+    ViewBag.Title = "ViewCaseStudy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        $('#case_tab').addClass("active");
+    });
+</script>
+
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+           View Case Studies
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li class="active">View Case Studies</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="alert alert-danger alert-dismissable custom_hide" id="errorblock" style="margin-left:5px">
+            <i class="fa fa-ban"></i>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <span id="error_text"></span>
+        </div>
+        <div class="alert alert-success alert-dismissable custom_hide" id="successblock" style="margin-left:5px">
+            <i class="fa fa-ban"></i>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true" id="for_reaload">&times;</button>
+            <span id="success_text"></span>
+        </div>
+        <div class="row" id="r">
+            <section class="col-lg-12">
+                <div class="box box-primary">
+                    <div class="box-body">
+                        <table id="tbl-location" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>case Study</th>
+                                    <th>Service Type</th>
+                                    <th>Image</th>
+                                    <th>White Paper</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.ToList().Count == 0)
+                                {
+                                    <tr><td colspan="6"><span>No records found.</span></td></tr>
+                                }
+                                else { 
+                                    int i = 0;
+                                    foreach (var Item in Model)
+                                    {
+                                        i++;
+                                        <tr>
+                                            <td>@i</td>
+                                            <td>@Html.DisplayFor(modelitem => Item.case_name)</td>
+                                            <td>@Html.DisplayFor(modelitem => Item.service_type)</td>
+                                            <td><img  src="~/Case-Images/@Item.image" height="30" width="40"/></td>
+                                            <td><a href="/Admin/DownloadWPaper/@Item.id" class="btn btn-success btn-sm"><i class="fa fa-download"></i></a></td>
+                                            <td>
+                                                <a href="/Admin/AddCaseStudy/@Item.id" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>
+                                                <a href="/Admin/DeleteCaseStudy/@Item.id" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want delete');"><i class=" fa fa-remove"></i></a>
+                                            </td>
+                                        </tr>
+
+                                    }
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</aside>
+
+

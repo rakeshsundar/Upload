@@ -1,0 +1,122 @@
+﻿@model  IEnumerable<MvcMySql.Models.product_details>
+@{
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+  
+  <script type="text/javascript">
+      $(function () {
+          $(".banner-lead-1").text('Application Solution');
+          $(".banner-lead-2").hide();
+          $(".banner-content-p").text(" We got the powerfull solution to fit your needs to boost your performance.");
+          $(".banner-buttons").hide();
+        
+          $(document).ready(function () {
+              $(".modal-close").click(function () {
+                  $(".modal").hide();
+                  //fill_data(id);
+              });
+
+              $(".tbl_event_id").click(function () {
+                  var id = $(this).attr("id");
+                  
+                  GetDetails(id);
+
+
+                  //fill_data(id);
+              });
+
+              function GetDetails(get_id) {
+                  
+
+                  sendPost("POST", "/Ibs/getProductdata", JSON.stringify({ id: get_id }), function (data) {
+                      if (data != null && typeof (data) != undefined) {
+
+                          $("#team-2-profile").show();
+                          document.getElementById("productname1").textContent = data.product_name;
+                          document.getElementById("funder_txt").textContent = "Application Solution : " + data.product_title;
+                          document.getElementById("dePt").innerHTML = data.product_description;
+                          $('#imt').attr('src', data.product_image);
+
+                      }
+                      else {
+                          alert("Unable to process your request.");
+                      }
+                  }, function (req, data, error) { }, true);
+              }
+
+
+              function sendPost(reqtype, requestUrl, dataPayload, successfunc, errorfunc, synchronousMode) {
+                  return $.ajax({
+                      type: reqtype,
+                      dataType: "json",
+                      contentType: "application/json; charset=utf-8",
+                      url: requestUrl,
+                      data: dataPayload,
+                      success: successfunc,
+                      error: errorfunc,
+                      async: synchronousMode
+                  });
+              }
+
+          });
+      });
+
+  </script>
+ <div class="animate-block our-team-block pad-top-20">
+    <h3 class="heading fs-3" style="text-align: center;">Application Products</h3>
+    <ul id="team" class="team-list clear">
+
+        @foreach (var data in Model)
+        {
+            <li class="team-item col-6 col-4-m no-padding-m col-3-l no-padding-l col-3-xl no-padding-xl">
+                @*<a class="mylink" tbl_event_id href="#team-2-profile">*@
+                <a class="tbl_event_id" id="@data.id" style="cursor: pointer; ">
+                    <div id="img1" class="team-container">
+                        <strong class="team-product">@data.product_name</strong>
+                        <img class="block team-product_img" id="imgurl" src="@data.product_image" alt="@data.product_name">
+                    </div>
+                    <span class="team-item-content">
+                        <strong class="team-item-title">@data.product_title</strong>
+                        <strong id="p_name" class="team-item-name">@data.product_name</strong>
+                        <strong class="team-item-title">AED @data.price</strong>
+
+                        @Html.Hidden("hdnId", @data.id)
+
+                        @if (data.m_service_type_id == 1)
+                        {
+                            <span id="service_type" class="team-item-position">Application Solution</span>
+                        }
+                        else if (data.m_service_type_id == 2)
+                        {
+                            <span class="team-item-position">Hardware Products</span>
+                        }
+                        else if (data.m_service_type_id == 3)
+                        {
+                            <span class="team-item-position">Service & Support</span>
+                        }
+                        else if (data.m_service_type_id == 4)
+                        {
+                            <span class="team-item-position">Wireless Infrastructure</span>
+                        }
+                    </span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+<div class="team-profiles-block">
+    <div class="modal" id="team-2-profile">
+        <a class="modal-close" style="cursor: pointer;"></a>
+        <div class="modal-inner">
+            <h2 id="productname1" class="heading fs-3 team-profile-heading"></h2>
+            <strong id="funder_txt" class="block"></strong>
+            <div class="clear team-profile-content">
+                <img class="team-profile-image block img-fluid" id="imt" src="~/img/team-12.jpg" alt="Team Member 1">
+                <div class="team-profile-content-block">
+                    <p id="dePt"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

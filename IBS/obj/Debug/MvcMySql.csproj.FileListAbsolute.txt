@@ -1,0 +1,26 @@
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\bin\MvcMySql.dll.config
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\bin\MvcMySql.dll
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\bin\MvcMySql.pdb
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\bin\EntityFramework.xml
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\bin\EntityFramework.SqlServer.xml
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\bin\System.Web.Razor.xml
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\bin\System.Web.Webpages.xml
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\bin\System.Web.Webpages.Deployment.xml
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\bin\System.Web.Webpages.Razor.xml
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\bin\System.Web.Helpers.xml
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\bin\System.Web.Mvc.xml
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\obj\Debug\MvcMySql.csprojResolveAssemblyReference.cache
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\obj\Debug\MvcMySql.dll
+D:\Work Space\Sharjah\MvcMySqlSite\MvcMySql\MvcMySql\obj\Debug\MvcMySql.pdb
+D:\Work Space\Sharjah\IBS\MvcMySql\bin\MvcMySql.dll
+D:\Work Space\Sharjah\IBS\MvcMySql\bin\MvcMySql.pdb
+D:\Work Space\Sharjah\IBS\MvcMySql\obj\Debug\MvcMySql.dll
+D:\Work Space\Sharjah\IBS\MvcMySql\obj\Debug\MvcMySql.pdb
+D:\Work Space\Sharjah\IBS\MvcMySql\obj\Debug\MvcMySql.csprojResolveAssemblyReference.cache
+C:\Users\rsundar.CORP\Desktop\IBS\bin\MvcMySql.dll.config
+C:\Users\rsundar.CORP\Desktop\IBS\bin\MvcMySql.dll
+C:\Users\rsundar.CORP\Desktop\IBS\bin\MvcMySql.pdb
+C:\Users\rsundar.CORP\Desktop\IBS\obj\Debug\MvcMySql.csprojResolveAssemblyReference.cache
+C:\Users\rsundar.CORP\Desktop\IBS\obj\Debug\MvcMySql.dll
+C:\Users\rsundar.CORP\Desktop\IBS\obj\Debug\MvcMySql.pdb
+C:\Users\rsundar.CORP\Desktop\IBS\bin\Microsoft.Web.Infrastructure.dll

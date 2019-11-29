@@ -1,0 +1,87 @@
+﻿@model IEnumerable<MvcMySql.Models.view_product_details>
+@{
+    ViewBag.Title = "ViewProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    $(function () {
+        $('#product_tab').addClass("active");
+    });
+</script>
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            View Product
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li class="active">View Product</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="alert alert-danger alert-dismissable custom_hide" id="errorblock" style="margin-left:5px">
+            <i class="fa fa-ban"></i>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <span id="error_text"></span>
+        </div>
+        <div class="alert alert-success alert-dismissable custom_hide" id="successblock" style="margin-left:5px">
+            <i class="fa fa-ban"></i>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true" id="for_reaload">&times;</button>
+            <span id="success_text"></span>
+        </div>
+        <div class="row" id="r">
+            <section class="col-lg-12">
+                <div class="box box-primary">
+                    <div class="box-body">
+                        <table id="tbl-location" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Service Type</th>
+                                    <th>Product Title</th>
+                                    <th>Product Name</th>
+                                    <th>Description</th>
+                                    <th>Price(AED)</th>
+                                    <th>Image</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               @if(Model.ToList().Count == 0)
+                               {
+                                 <tr> 
+                                     <td colspan="8"><span>No records were found</span></td> 
+                                </tr> 
+                               }
+                               else
+                                {
+                                    int i = 0;
+                                    foreach (var Item in Model)
+                                    {
+                                        i++;
+                                        <tr>
+                                            <td>@i</td>
+                                            <td>@Html.DisplayFor(modelitem => Item.service_type)</td>
+                                            <td>@Html.DisplayFor(modelitem => Item.product_title)</td>
+                                            <td>@Html.DisplayFor(modelitem => Item.product_name)</td>
+                                            <td>@Html.Raw(Item.product_description)</td>
+                                            <td>@Html.DisplayFor(modelitem => Item.price)</td>
+                                            <td><img src="@Item.product_image" height="30" width="40" /></td>
+                                            <td>
+                                                <a href="/Admin/PruductDetails/@Item.id" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>
+                                                <a href="/Admin/DeletePruduct/@Item.id" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want delete');"><i class=" fa fa-remove"></i></a>
+                                            </td>
+                                           
+                                        </tr>
+
+                                    }
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</aside>

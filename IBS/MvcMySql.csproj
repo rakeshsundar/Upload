@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ADF72B70-3B82-4932-815E-6D8AD6A9F824}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcMySql</RootNamespace>
+    <AssemblyName>MvcMySql</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>packages\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\MySql.ConnectorNET.Data.6.8.3.2\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\MySql.ConnectorNET.Entity.6.8.3.2\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\MvcMySql.dll" />
+    <Content Include="bin\MvcMySql.pdb" />
+    <Content Include="bin\MySql.Data.dll" />
+    <Content Include="bin\MySql.Data.Entity.EF6.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.Webpages.Deployment.dll" />
+    <Content Include="bin\System.Web.Webpages.Deployment.xml" />
+    <Content Include="bin\System.Web.Webpages.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.xml" />
+    <Content Include="bin\System.Web.Webpages.xml" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap3-wysihtml5.min.css" />
+    <Content Include="Content\img\b1.png" />
+    <Content Include="Content\img\b2.jpg" />
+    <Content Include="Content\img\banner-photo.png" />
+    <Content Include="Content\img\icon-11.png" />
+    <Content Include="Content\img\icon1.png" />
+    <Content Include="Content\img\icon2.png" />
+    <Content Include="Content\img\icon3.png" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo3.png" />
+    <Content Include="Content\img\sidebar-image-01.png" />
+    <Content Include="Content\img\sidebar-image-02.png" />
+    <Content Include="Content\img\trans-black.png" />
+    <Content Include="Content\img\trans-black111.png" />
+    <Content Include="Content\img\trans-black2.png" />
+    <Content Include="Content\img\trans-black3.png" />
+    <Content Include="Content\img\trans-black4.png" />
+    <Content Include="Content\img\where_to.png" />
+    <Content Include="Content\jquery.alerts.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\_assets\css\b1.png" />
+    <Content Include="Content\_assets\css\b2.jpg" />
+    <Content Include="Content\_assets\css\grid-60px-gutter.css" />
+    <Content Include="Content\_assets\css\img\b1.png" />
+    <Content Include="Content\_assets\css\img\b2.jpg" />
+    <Content Include="Content\_assets\css\img\banner-photo.png" />
+    <Content Include="Content\_assets\css\img\icon2.png" />
+    <Content Include="Content\_assets\css\img\icon3.png" />
+    <Content Include="Content\_assets\css\img\logo3.png" />
+    <Content Include="Content\_assets\css\img\logo3_orig.png" />
+    <Content Include="Content\_assets\css\img\sidebar-image-01.png" />
+    <Content Include="Content\_assets\css\img\sidebar-image-02.png" />
+    <Content Include="Content\_assets\css\img\trans-blac1k.png" />
+    <Content Include="Content\_assets\css\img\trans-black.png" />
+    <Content Include="Content\_assets\css\img\trans-black111.png" />
+    <Content Include="Content\_assets\css\img\trans-black2.png" />
+    <Content Include="Content\_assets\css\img\trans-black3.png" />
+    <Content Include="Content\_assets\css\img\trans-black4.png" />
+    <Content Include="Content\_assets\css\img\where_to.png" />
+    <Content Include="Content\_assets\css\logo3.png" />
+    <Content Include="Content\_assets\css\screen.css" />
+    <Content Include="Content\_assets\js\irelo.js" />
+    <Content Include="Content\_assets\js\jquery-ui\css\screen.css" />
+    <Content Include="Content\_assets\js\jquery-ui\jquery-ui-1.8.20.min.js" />
+    <Content Include="Content\_assets\js\jquery.cookie.js" />
+    <Content Include="Content\_assets\js\jquery.maskedinput.min.js" />
+    <Content Include="Content\_assets\js\jquery.min.js" />
+    <Content Include="Content\_assets\js\jquery.tools.min.js" />
+    <Content Include="Content\_assets\js\s3Capcha.js" />
+    <Content Include="Content\_assets\js\tooltip.js" />
+    <Content Include="css1\styles.css" />
+    <Content Include="css\AdminLTE.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\bootstrap.min1.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\iCheck\all.css" />
+    <Content Include="css\iCheck\flat\aero%402x.png" />
+    <Content Include="css\iCheck\flat\aero.css" />
+    <Content Include="css\iCheck\flat\aero.png" />
+    <Content Include="css\iCheck\flat\blue%402x.png" />
+    <Content Include="css\iCheck\flat\blue.css" />
+    <Content Include="css\iCheck\flat\blue.png" />
+    <Content Include="css\iCheck\flat\flat%402x.png" />
+    <Content Include="css\iCheck\flat\flat.css" />
+    <Content Include="css\iCheck\flat\flat.png" />
+    <Content Include="css\iCheck\flat\green%402x.png" />
+    <Content Include="css\iCheck\flat\green.css" />
+    <Content Include="css\iCheck\flat\green.png" />
+    <Content Include="css\iCheck\flat\grey%402x.png" />
+    <Content Include="css\iCheck\flat\grey.css" />
+    <Content Include="css\iCheck\flat\grey.png" />
+    <Content Include="css\iCheck\flat\orange%402x.png" />
+    <Content Include="css\iCheck\flat\orange.css" />
+    <Content Include="css\iCheck\flat\orange.png" />
+    <Content Include="css\iCheck\flat\pink%402x.png" />
+    <Content Include="css\iCheck\flat\pink.css" />
+    <Content Include="css\iCheck\flat\pink.png" />
+    <Content Include="css\iCheck\flat\purple%402x.png" />
+    <Content Include="css\iCheck\flat\purple.css" />
+    <Content Include="css\iCheck\flat\purple.png" />
+    <Content Include="css\iCheck\flat\red%402x.png" />
+    <Content Include="css\iCheck\flat\red.css" />
+    <Content Include="css\iCheck\flat\red.png" />
+    <Content Include="css\iCheck\flat\yellow%402x.png" />
+    <Content Include="css\iCheck\flat\yellow.css" />
+    <Content Include="css\iCheck\flat\yellow.png" />
+    <Content Include="css\iCheck\flat\_all.css" />
+    <Content Include="css\iCheck\futurico\futurico%402x.png" />
+    <Content Include="css\iCheck\futurico\futurico.css" />
+    <Content Include="css\iCheck\futurico\futurico.png" />
+    <Content Include="css\iCheck\line\aero.css" />
+    <Content Include="css\iCheck\line\blue.css" />
+    <Content Include="css\iCheck\line\green.css" />
+    <Content Include="css\iCheck\line\grey.css" />
+    <Content Include="css\iCheck\line\line%402x.png" />
+    <Content Include="css\iCheck\line\line.css" />
+    <Content Include="css\iCheck\line\line.png" />
+    <Content Include="css\iCheck\line\orange.css" />
+    <Content Include="css\iCheck\line\pink.css" />
+    <Content Include="css\iCheck\line\purple.css" />
+    <Content Include="css\iCheck\line\red.css" />
+    <Content Include="css\iCheck\line\yellow.css" />
+    <Content Include="css\iCheck\line\_all.css" />
+    <Content Include="css\iCheck\minimal\aero%402x.png" />
+    <Content Include="css\iCheck\minimal\aero.css" />
+    <Content Include="css\iCheck\minimal\aero.png" />
+    <Content Include="css\iCheck\minimal\blue%402x.png" />
+    <Content Include="css\iCheck\minimal\blue.css" />
+    <Content Include="css\iCheck\minimal\blue.png" />
+    <Content Include="css\iCheck\minimal\green%402x.png" />
+    <Content Include="css\iCheck\minimal\green.css" />
+    <Content Include="css\iCheck\minimal\green.png" />
+    <Content Include="css\iCheck\minimal\grey%402x.png" />
+    <Content Include="css\iCheck\minimal\grey.css" />
+    <Content Include="css\iCheck\minimal\grey.png" />
+    <Content Include="css\iCheck\minimal\minimal%402x.png" />
+    <Content Include="css\iCheck\minimal\minimal.css" />
+    <Content Include="css\iCheck\minimal\minimal.png" />
+    <Content Include="css\iCheck\minimal\orange%402x.png" />
+    <Content Include="css\iCheck\minimal\orange.css" />
+    <Content Include="css\iCheck\minimal\orange.png" />
+    <Content Include="css\iCheck\minimal\pink%402x.png" />
+    <Content Include="css\iCheck\minimal\pink.css" />
+    <Content Include="css\iCheck\minimal\pink.png" />
+    <Content Include="css\iCheck\minimal\purple%402x.png" />
+    <Content Include="css\iCheck\minimal\purple.css" />
+    <Content Include="css\iCheck\minimal\purple.png" />
+    <Content Include="css\iCheck\minimal\red%402x.png" />
+    <Content Include="css\iCheck\minimal\red.css" />
+    <Content Include="css\iCheck\minimal\red.png" />
+    <Content Include="css\iCheck\minimal\yellow%402x.png" />
+    <Content Include="css\iCheck\minimal\yellow.css" />
+    <Content Include="css\iCheck\minimal\yellow.png" />
+    <Content Include="css\iCheck\minimal\_all.css" />
+    <Content Include="css\iCheck\polaris\polaris%402x.png" />
+    <Content Include="css\iCheck\polaris\polaris.css" />
+    <Content Include="css\iCheck\polaris\polaris.png" />
+    <Content Include="css\iCheck\square\aero%402x.png" />
+    <Content Include="css\iCheck\square\aero.css" />
+    <Content Include="css\iCheck\square\aero.png" />
+    <Content Include="css\iCheck\square\blue%402x.png" />
+    <Content Include="css\iCheck\square\blue.css" />
+    <Content Include="css\iCheck\square\blue.png" />
+    <Content Include="css\iCheck\square\green%402x.png" />
+    <Content Include="css\iCheck\square\green.css" />
+    <Content Include="css\iCheck\square\green.png" />
+    <Content Include="css\iCheck\square\grey%402x.png" />
+    <Content Include="css\iCheck\square\grey.css" />
+    <Content Include="css\iCheck\square\grey.png" />
+    <Content Include="css\iCheck\square\orange%402x.png" />
+    <Content Include="css\iCheck\square\orange.css" />
+    <Content Include="css\iCheck\square\orange.png" />
+    <Content Include="css\iCheck\square\pink%402x.png" />
+    <Content Include="css\iCheck\square\pink.css" />
+    <Content Include="css\iCheck\square\pink.png" />
+    <Content Include="css\iCheck\square\purple%402x.png" />
+    <Content Include="css\iCheck\square\purple.css" />
+    <Content Include="css\iCheck\square\purple.png" />
+    <Content Include="css\iCheck\square\red%402x.png" />
+    <Content Include="css\iCheck\square\red.css" />
+    <Content Include="css\iCheck\square\red.png" />
+    <Content Include="css\iCheck\square\square%402x.png" />
+    <Content Include="css\iCheck\square\square.css" />
+    <Content Include="css\iCheck\square\square.png" />
+    <Content Include="css\iCheck\square\yellow%402x.png" />
+    <Content Include="css\iCheck\square\yellow.css" />
+    <Content Include="css\iCheck\square\yellow.png" />
+    <Content Include="css\iCheck\square\_all.css" />
+    <Content Include="css\ionic.min.css" />
+    <Content Include="css\jsDatePick_ltr.min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\jquery-ui-1.8.20.custom.css" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="img\apple-touch-icon-114x114.png" />
+    <Content Include="img\apple-touch-icon-72x72.png" />
+    <Content Include="img\apple-touch-icon.png" />
+    <Content Include="img\b1.png" />
+    <Content Include="img\b2.jpg" />
+    <Content Include="img\banner-photo.png" />
+    <Content Include="img\banner.jpg" />
+    <Content Include="img\banner1.jpg" />
+    <Content Include="img\button-get.png" />
+    <Content Include="img\contact-banner.jpg" />
+    <Content Include="img\favicon.png" />
+    <Content Include="img\icon-11.png" />
+    <Content Include="img\icon1.png" />
+    <Content Include="img\icon2.png" />
+    <Content Include="img\icon3.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\logo3.png" />
+    <Content Include="img\mcafee.png" />
+    <Content Include="img\netflix.png" />
+    <Content Include="img\news-item-01.jpg" />
+    <Content Include="img\news-item-02.jpg" />
+    <Content Include="img\news-item-03.jpg" />
+    <Content Include="img\oracle.png" />
+    <Content Include="img\progressbar2.png" />
+    <Content Include="img\progressbar3.png" />
+    <Content Include="img\requirements-banner.jpg" />
+    <Content Include="img\sandisk.png" />
+    <Content Include="img\sap.png" />
+    <Content Include="img\sidebar-image-01.png" />
+    <Content Include="img\sidebar-image-02.png" />
+    <Content Include="img\sony.png" />
+    <Content Include="img\team-01.jpg" />
+    <Content Include="img\team-02.jpg" />
+    <Content Include="img\team-03.jpg" />
+    <Content Include="img\team-04.jpg" />
+    <Content Include="img\team-05.jpg" />
+    <Content Include="img\team-06.jpg" />
+    <Content Include="img\team-07.jpg" />
+    <Content Include="img\team-08.jpg" />
+    <Content Include="img\team-09.jpg" />
+    <Content Include="img\team-10.jpg" />
+    <Content Include="img\team-11.jpg" />
+    <Content Include="img\team-12.jpg" />
+    <Content Include="img\trans-black.png" />
+    <Content Include="img\trans-black111.png" />
+    <Content Include="img\trans-black2.png" />
+    <Content Include="img\trans-black3.png" />
+    <Content Include="img\trans-black4.png" />
+    <Content Include="img\video-banner.jpg" />
+    <Content Include="img\where_to.png" />
+    <Content Include="img\zipok.png" />
+    <Content Include="jquery\jquery-1.10.2.js" />
+    <Content Include="jquery\jquery-1.3.2.min.js" />
+    <Content Include="jquery\jquery-1.5.2.min.js" />
+    <Content Include="jquery\jquery-2.1.4.js" />
+    <Content Include="jquery\jquery-ui.css" />
+    <Content Include="jquery\jquery-ui.js" />
+    <Content Include="jquery\ui-icons_ef8c08_256x240.png" />
+    <Content Include="jquery\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\app.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\default %281%29.js" />
+    <Content Include="js\default.js" />
+    <Content Include="js\jquery-ui.css" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jsDatePick.min.1.3.js" />
+    <Content Include="js\Numberic.js" />
+    <Content Include="js\vendor\wow.js" />
+    <Content Include="obj\Debug\MvcMySql.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\MvcMySql.dll" />
+    <Content Include="obj\Debug\MvcMySql.pdb" />
+    <Content Include="PopUp\jquery-2.1.4.js" />
+    <Content Include="PopUp\jquery-ui.css" />
+    <Content Include="PopUp\jquery-ui.js" />
+    <Content Include="PopUp\jquery-ui.min.js" />
+    <Content Include="PopUp\jquery.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="bin\MvcMySql.dll.config" />
+    <Content Include="Content\_assets\css\img\redj.zip" />
+    <Content Include="css\OpenSans-Regular.ttf" />
+    <Content Include="css\style.css.exclude" />
+    <Content Include="css1\styles.css.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\ionicons.eot" />
+    <Content Include="fonts\ionicons.svg" />
+    <Content Include="fonts\ionicons.ttf" />
+    <Content Include="fonts\ionicons.woff" />
+    <Content Include="img\.DS_Store" />
+    <Content Include="img\banner.svg" />
+    <Content Include="img\contact-icons.svg" />
+    <Content Include="img\logo.svg" />
+    <Content Include="img\service-icons.svg" />
+    <Content Include="img\social-icons-white.svg" />
+    <Content Include="img\social-icons.svg" />
+    <Content Include="js\jquery-ui.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\MvcMySql.csprojResolveAssemblyReference.cache" />
+    <Content Include="PopUp\jquery.min.cache" />
+    <Content Include="Scripts\bootstrap3-wysihtml5.all.js" />
+    <Content Include="Scripts\naresh.js" />
+    <Content Include="_assets\css\b1.png" />
+    <Content Include="_assets\css\b2.jpg" />
+    <Content Include="_assets\css\button-get.png" />
+    <Content Include="_assets\css\calendar-mos.css" />
+    <Content Include="_assets\css\grid-60px-gutter.css" />
+    <Content Include="_assets\css\img\b1.png" />
+    <Content Include="_assets\css\img\b2.jpg" />
+    <Content Include="_assets\css\img\banner-photo.png" />
+    <Content Include="_assets\css\img\building.png" />
+    <Content Include="_assets\css\img\button-get.png" />
+    <Content Include="_assets\css\img\dropdown.png" />
+    <Content Include="_assets\css\img\icon2.png" />
+    <Content Include="_assets\css\img\icon3.png" />
+    <Content Include="_assets\css\img\logo3.png" />
+    <Content Include="_assets\css\img\logo3_orig.png" />
+    <Content Include="_assets\css\img\sidebar-image-01.png" />
+    <Content Include="_assets\css\img\sidebar-image-02.png" />
+    <Content Include="_assets\css\img\trans-blac1k.png" />
+    <Content Include="_assets\css\img\trans-black.png" />
+    <Content Include="_assets\css\img\trans-black111.png" />
+    <Content Include="_assets\css\img\trans-black2.png" />
+    <Content Include="_assets\css\img\trans-black3.png" />
+    <Content Include="_assets\css\img\trans-black4.png" />
+    <Content Include="_assets\css\img\where_to.png" />
+    <Content Include="_assets\css\jquery-ui-1.8.20.custom.css" />
+    <Content Include="_assets\css\logo3.png" />
+    <Content Include="_assets\css\newscreen1213.css" />
+    <Content Include="_assets\css\screen.css" />
+    <Content Include="_assets\css\screen11.css" />
+    <Content Include="_assets\css\screen12.css" />
+    <Content Include="_assets\css\submit234.css" />
+    <Content Include="_assets\js\angular.js" />
+    <Content Include="_assets\js\calendar-en-GB.js" />
+    <Content Include="_assets\js\calendar.js" />
+    <Content Include="_assets\js\irelo.js" />
+    <Content Include="_assets\js\joomla.javascript.js" />
+    <Content Include="_assets\js\jquery-1.10.2.js" />
+    <Content Include="_assets\js\jquery-ui.js" />
+    <Content Include="_assets\js\jquery-ui\css\jquery-ui-1.8.20.custom.css" />
+    <Content Include="_assets\js\jquery-ui\css\screen.css" />
+    <Content Include="_assets\js\jquery-ui\jquery-ui-1.8.20.min.js" />
+    <Content Include="_assets\js\jquery.cookie.js" />
+    <Content Include="_assets\js\jquery.maskedinput.min.js" />
+    <Content Include="_assets\js\jquery.min.js" />
+    <Content Include="_assets\js\jquery.tools.min.js" />
+    <Content Include="_assets\js\ngAutocomplete.js" />
+    <Content Include="_assets\js\s3Capcha.js" />
+    <Content Include="_assets\js\script.js" />
+    <Content Include="_assets\js\tooltip.js" />
+    <Content Include="_assets\NewFolder\cs\calendar-mos.css" />
+    <Content Include="_assets\NewFolder\cs\jquery-ui-1.8.20.custom.css" />
+    <Content Include="_assets\NewFolder\cs\newscreen.css" />
+    <Content Include="_assets\NewFolder\cs\screen.css" />
+    <Content Include="_assets\NewFolder\cs\submit.css" />
+    <Content Include="_assets\NewFolder\cs\ui-icons_ef8c08_256x240.png" />
+    <Content Include="_assets\NewFolder\cs\ui-icons_ffffff_256x240.png" />
+    <Content Include="_assets\NewFolder\js\calendar-en-GB.js" />
+    <Content Include="_assets\NewFolder\js\calendar.js" />
+    <Content Include="_assets\NewFolder\js\irelo.js" />
+    <Content Include="_assets\NewFolder\js\jquery-ui-1.8.20.min.js" />
+    <Content Include="_assets\NewFolder\js\jquery.cookie.js" />
+    <Content Include="_assets\NewFolder\js\jquery.min.js" />
+    <Content Include="_assets\NewFolder\js\jquery.tools.min.js" />
+    <Content Include="_assets\NewFolder\js\tooltip.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Styles\Style.css" />
+    <Content Include="Upload_Product\19042017121929Chrysanthemum.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="scss\.DS_Store" />
+    <Content Include="scss\base.scss" />
+    <Content Include="scss\base\_animations.scss" />
+    <Content Include="scss\base\_blockquotes.scss" />
+    <Content Include="scss\base\_buttons.scss" />
+    <Content Include="scss\base\_code.scss" />
+    <Content Include="scss\base\_forms.scss" />
+    <Content Include="scss\base\_grid-non-responsive.scss" />
+    <Content Include="scss\base\_grid.scss" />
+    <Content Include="scss\base\_helpers.scss" />
+    <Content Include="scss\base\_lists.scss" />
+    <Content Include="scss\base\_mixins.scss" />
+    <Content Include="scss\base\_print.scss" />
+    <Content Include="scss\base\_resets.scss" />
+    <Content Include="scss\base\_tables.scss" />
+    <Content Include="scss\base\_typography.scss" />
+    <Content Include="scss\base\_variables.scss" />
+    <Content Include="scss\styles.scss" />
+    <Content Include="scss\styles\.DS_Store" />
+    <Content Include="scss\styles\_about.scss" />
+    <Content Include="scss\styles\_components.scss" />
+    <Content Include="scss\styles\_contact-feature.scss" />
+    <Content Include="scss\styles\_contact.scss" />
+    <Content Include="scss\styles\_footer.scss" />
+    <Content Include="scss\styles\_header.scss" />
+    <Content Include="scss\styles\_news.scss" />
+    <Content Include="scss\styles\_services.scss" />
+    <Content Include="scss\styles\_variables-colors.scss" />
+    <Content Include="scss\styles\_video-feature.scss" />
+    <Content Include="Views\Admin\ChangePassword.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\PruductDetails.cshtml" />
+    <Content Include="Views\Admin\ViewContact.cshtml" />
+    <Content Include="Views\Admin\ViewProduct.cshtml" />
+    <Content Include="Views\Ibs\Application.cshtml" />
+    <Content Include="Views\Ibs\Hardware.cshtml" />
+    <Content Include="Views\Ibs\Index.cshtml" />
+    <Content Include="Views\Ibs\Service.cshtml" />
+    <Content Include="Views\Ibs\Wireless.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="_assets\css\img\redj.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\common_function.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\IbsController.cs" />
+    <Compile Include="Controllers\SendMail.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\MyDbContext.cs" />
+    <Compile Include="Models\IbsModel.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\Admin\AddCaseStudy.cshtml" />
+    <Content Include="Views\Admin\ViewCaseStudy.cshtml" />
+    <Content Include="Views\Shared\_LayoutHome.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Case-Images\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="White-Papers\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53472</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53472/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,87 @@
+﻿/*.international-movers #header, .bc_office #header, .auto-transport #header{ padding:31px 0 40px!important;}*/
+#main{ padding-bottom:30px;}
+.progress span{ top:-4px;}
+body #main .wrapper{ background:none !important;padding-top: 30px !important;}
+.auto-transport #main .wrapper{ padding-top:0 !important;}
+.bc_office #main .wrapper{ padding-top:15px !important;}
+.international-movers #main{background: url("../_assets/img/internationalmoves2.jpg") no-repeat scroll 0 0 #363636; background-size: cover;}
+.bc_office #main {background: url("../_assets/img/officemoves2.jpg") no-repeat scroll 0 0 #363636; background-size: cover;}
+.discount #main {background: url("../_assets/img/office.jpg") no-repeat scroll 0 0 #363636; background-size: cover;}
+.auto-transport #main {background: url("../_assets/img/autoransportsubmit.jpg") no-repeat scroll 0 0 #363636; background-size: cover;}
+.moving-form fieldset {
+    padding: 0 100px 20px; position:relative;
+}
+.moving-form { background: rgba(255,255,255,.8);border-radius: 10px; margin-bottom: 0; margin-left: auto; margin-right: auto; margin-top: 50px !important; width: 500px;}
+.moving-form .header {background: none repeat scroll 0 0 rgba(0, 0, 0, 0);}
+.moving-form .header h1 {color: #000000;}
+.moving-form .input{ text-align:center; width:100%;}
+.moving-form .header p {color: #000000;}
+.moving-form .zip-finder, .moving-form .note {
+    float: left;
+    line-height: 22px;
+    margin: 2px 0;
+    text-align: center;
+    width: 34%;
+}
+.zip-finder {
+    clear: both;
+    float: left;
+    font-size: 12px;
+    margin-top: 0 !important;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100% !important;
+}
+.zip-finder a {
+    background-size: 14% auto;
+    display: inline-block;
+    line-height: 13px;
+    padding-left: 15px;
+    background-size: auto auto;
+}
+.info_input {
+	font-size: 14px;
+	line-height: 1em;
+	margin-left: 1%;
+	position: absolute;
+	right: -99px;
+	text-align: left;
+	top: 5px;
+	width: 33%;
+	color: #000;
+}@media screen and (max-width: 959px) {
+	.info_input {
+		font-size: 14px;
+		line-height: 1em;
+		margin-left: 1%;
+		position: absolute;
+		right: 26px;
+		text-align: left;
+		top: 42px;
+		width: 70%;
+		color: #000;
+	}
+	.info_input a{color: #cc0000;}
+	.zip-finder{padding-top: 22px;}
+}
+
+.info_input a{color: #000;}
+
+
+span.mfs:before, span.mfs:after{width: 34%!important;}
+span.mts:before, span.mts:after{width: 37%!important;}
+span.esq:before, span.esq:after{width: 20%!important;}
+span.dst:before, span.dst:after{width: 26%!important;}
+span.sts:before, span.sts:after{width: 33%!important;}
+span.sfs:before, span.sfs:after{width: 36%!important;}
+span.phs:before, span.phs:after{width: 32%!important;}
+span.cps:before, span.cps:after{width: 27%!important;}
+span.nos:before, span.nos:after{width: 21%!important;}
+span.phts:before, span.phts:after{width: 36%!important;}
+span.phis:before, span.phis:after{width: 27%!important;}
+.transport_input{height: 30px;}
+.transport_vehicle{padding:9px 10px!important;}
+#ship_vehicle{display: none;}
+.moving-form .input {position: relative;}
+#send_quotes{float: left; width: 76%!important; text-align: left!important;}
+.send_quotes_input{float: left!important; padding-left: 10px;}

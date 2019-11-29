@@ -1,0 +1,73 @@
+﻿@model IEnumerable<MvcMySql.Models.contact_us>
+@{
+    ViewBag.Title = "ViewContact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    $(function () { 
+        $('#query_tab').addClass("active");
+    });
+</script>
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            Customer Query
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li class="active">Customer Query</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="alert alert-danger alert-dismissable custom_hide" id="errorblock" style="margin-left:5px">
+            <i class="fa fa-ban"></i>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <span id="error_text"></span>
+        </div>
+        <div class="alert alert-success alert-dismissable custom_hide" id="successblock" style="margin-left:5px">
+            <i class="fa fa-ban"></i>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true" id="for_reaload">&times;</button>
+            <span id="success_text"></span>
+        </div>
+        <div class="row" id="r">
+            <section class="col-lg-12">
+                <div class="box box-primary">
+                    <div class="box-body">
+                        <table id="tbl-location" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Name</th>
+                                    <th>Email ID</th>
+                                    <th>Mobile No.</th>
+                                    <th>Message</th>
+                                    <th>Send Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.ToList().Count != 0)
+                                {
+                                    int i = 0;
+                                    foreach (var Item in Model)
+                                    {
+                                        i++;
+                                        <tr>
+                                            <td>@i</td>
+                                            <td>@Html.DisplayFor(modelitem => Item.name)</td>
+                                            <td>@Html.DisplayFor(modelitem => Item.email)</td>
+                                            <td>@Html.DisplayFor(modelitem => Item.mobile)</td>
+                                            <td>@Html.DisplayFor(modelitem => Item.message)</td>
+                                            <td>@Item.date_of_creation.ToString("dd/MM/yyy")</td>
+                                        </tr>
+
+                                    }
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+        </section>
+</aside>

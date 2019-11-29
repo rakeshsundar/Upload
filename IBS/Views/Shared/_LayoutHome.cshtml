@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Barcode</title>
+
+    <meta name="description" content="">
+    <meta name="theme-color" content="#CCCCCC">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="~/img/favicon.png">
+    <link href="../../Content/jquery.alerts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css1/styles.css">
+    <script src="../../Scripts/naresh.js"></script>
+    <script src="../../Scripts/jquery-1.7.1.min.js"></script>
+    <style>
+        .btn-primary {
+            background: #fe504f;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="header">
+            <div class="header-inner container clear">
+                <a class="logo" href="#"><span class="sr">IBS</span></a>
+                <input type="checkbox" id="navigation-toggle-checkbox" name="navigation-toggle-checkbox" class="navigation-toggle-checkbox none">
+                <label for="navigation-toggle-checkbox" class="navigation-toggle-label" onclick>
+                    <span class="navigation-toggle-label-inner">
+                        <span class="sr">Navigation</span>
+                    </span>
+                </label>
+                <div class="navigation">
+                    <ul class="navigation-menu">
+                        <li class="navigation-item"><a href="~/Ibs/Index#home">Home</a></li>
+                        <li class="navigation-item"><a href="~/Ibs/Index#about">About Us</a></li>
+                        <li class="navigation-item"><a href="~/Ibs/Index#services">Our Products</a></li>
+                        <li class="navigation-item"><a href="~/Ibs/Index#news">News & Case Study</a></li>
+                        <li class="navigation-item"><a href="~/Ibs/Index#contact">Service & Support</a></li>
+                        <li class="navigation-item"><a href="#">Partner</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="banner-inner">
+                <h1 class="banner-lead">
+                    <span class="banner-lead-1">Barcode Scanners</span>
+                    <span class="banner-lead-2">Biometrics</span>
+                </h1>
+                <div class="banner-content col-8-m no-float-m">
+                    <p class="banner-content-p">
+                        Growth doesn't always go the way you expect. Our strategy consultants can help you climb.
+                    </p>
+                </div>
+                <div class="banner-buttons">
+                    <a href="#services" class="button button-primary">Get started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+     @RenderBody()
+    <div class="footer">
+        <div class="footer-inner container">
+            <div class="clear">
+                <div class="footer-column col-9-m">
+                    <div class="navigation">
+                        <!--  <ul class="navigation-menu">
+                          <li class="navigation-item"><a href="#contact">Career</a></li>
+                          <li class="navigation-item"><a href="#contact">Feedback</a></li>
+
+                          </ul> -->
+                    </div>
+                    <p>
+                        &copy; Designed By &mdash; Softdew Tech Pvt Ltd
+                    </p>
+                </div>
+                <div class="footer-column col-3-m">
+                    <ul class="footer-social-list icon-list-inline">
+                        <li class="navigation-item-social"><a class="social-icon social-linkedin" href="#"><span class="sr">LinkedIn</span></a></li>
+                        <li class="navigation-item-social"><a class="social-icon social-facebook" href="#"><span class="sr">Facebook</span></a></li>
+                        <li class="navigation-item-social"><a class="social-icon social-twitter" href="#"><span class="sr">Twitter</span></a></li>
+                        <!--  <li class="navigation-item-social"><a class="social-icon social-youtube" href="#"><span class="sr">YouTube</span></a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/vendor/wow.js"></script>
+    <script src="js/default.js"></script>
+</body>
+</html>
