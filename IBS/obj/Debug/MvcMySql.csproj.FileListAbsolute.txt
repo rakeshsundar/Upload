@@ -24,3 +24,14 @@ C:\Users\rsundar.CORP\Desktop\IBS\obj\Debug\MvcMySql.csprojResolveAssemblyRefere
 C:\Users\rsundar.CORP\Desktop\IBS\obj\Debug\MvcMySql.dll
 C:\Users\rsundar.CORP\Desktop\IBS\obj\Debug\MvcMySql.pdb
 C:\Users\rsundar.CORP\Desktop\IBS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Rakesh\Documents\GitHub\Upload\IBS\bin\MvcMySql.dll
+C:\Users\Rakesh\Documents\GitHub\Upload\IBS\bin\MvcMySql.pdb
+C:\Users\Rakesh\Documents\GitHub\Upload\IBS\bin\mscorlib.dll
+C:\Users\Rakesh\Documents\GitHub\Upload\IBS\bin\normidna.nlp
+C:\Users\Rakesh\Documents\GitHub\Upload\IBS\bin\normnfc.nlp
+C:\Users\Rakesh\Documents\GitHub\Upload\IBS\bin\normnfd.nlp
+C:\Users\Rakesh\Documents\GitHub\Upload\IBS\bin\normnfkc.nlp
+C:\Users\Rakesh\Documents\GitHub\Upload\IBS\bin\normnfkd.nlp
+C:\Users\Rakesh\Documents\GitHub\Upload\IBS\obj\Debug\MvcMySql.csprojResolveAssemblyReference.cache
+C:\Users\Rakesh\Documents\GitHub\Upload\IBS\obj\Debug\MvcMySql.dll
+C:\Users\Rakesh\Documents\GitHub\Upload\IBS\obj\Debug\MvcMySql.pdb
